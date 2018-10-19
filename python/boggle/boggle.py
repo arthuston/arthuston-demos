@@ -118,7 +118,7 @@ class Boggle:
 
     def _solve_puzzle(self, position, visited, partial_word, matching_words):
         """
-        Solve puzzle recursively
+        Solve puzzle recursively at current position.
         :param position: current position
         :param visited: previously visited positions
         :param partial_word: the partial word
@@ -208,4 +208,4 @@ if __name__ == '__main__':
     for found_word in found_words:
         print(found_word)
 
-    sys.exit(1)
+    sys.exit(0)
