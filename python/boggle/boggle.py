@@ -39,24 +39,25 @@ class Boggle:
         """
         Internal class to store the x-y position in the puzzle grtid.
         """
-        x = None
-        y = None
+        col = None
+        row = None
 
-        def __init__(self, x, y):
+        def __init__(self, col, row):
             """
             Constructor.
-            :param x: x position in the grid
-            :param y: y position in the grid
+            :param row: row in the puzzle
+            :param col: column in the puzzle
+            y position in the grid
             """
-            self.x = x
-            self.y = y
+            self.col = col
+            self.row = row
 
         def __key(self):
             """
             Return key to this object.
             :return: key to this object
             """
-            return self.x, self.y
+            return self.col, self.row
 
         def __eq__(self, other):
             """
@@ -76,15 +77,15 @@ class Boggle:
     def __init__(self, puzzle):
         """
         Boggle constructor.
-        :param puzzle: list of same-length strings representing the grid. The number of items in the list must be the same as the length of each string.
+        :param puzzle: list of same-length strings representing the grid.
         """
         self.puzzle = puzzle
         puzzle_len = len(self.puzzle)
         for i in range(0, len(self.puzzle)):
-            str = self.puzzle[i]
-            if puzzle_len != len(str):
+            s = self.puzzle[i]
+            if puzzle_len != len(s):
                 raise ValueError('Illegal puzzle len %d instead of %d at line %d' %
-                                 (len(str), puzzle_len, i))
+                                 (len(s), puzzle_len, i))
 
     def solve(self, words):
         """
@@ -95,12 +96,12 @@ class Boggle:
         found_words = []
 
         # look for complete word starting at each character
-        for x in range(0, len(self.puzzle)):
-            for y in range(0, len(self.puzzle)):
-                found_words.extend(self._solve_puzzle(position=self._Position(x, y),
-                                                      visited=set(),
-                                                      partial_word="",
-                                                      matching_words=words))
+        for y in range(0, len(self.puzzle)):
+            for x in range(0, len(self.puzzle)):
+                found_words.extend(self._solve_position(position=self._Position(x, y),
+                                                        visited=set(),
+                                                        partial_word="",
+                                                        matching_words=words))
         return found_words
 
     def _check_partial_word(self, partial_word, matching_words):
@@ -116,7 +117,7 @@ class Boggle:
                 result.add(w)
         return result
 
-    def _solve_puzzle(self, position, visited, partial_word, matching_words):
+    def _solve_position(self, position, visited, partial_word, matching_words):
         """
         Solve puzzle recursively at current position.
         :param position: current position
@@ -130,9 +131,9 @@ class Boggle:
         # add character to partial word
         found_words = []
         visited.add(position)
-        partial_word = '%s%s' % (partial_word, self.puzzle[position.x][position.y])
+        char = self.puzzle[position.row][position.col]
+        partial_word = '%s%s' % (partial_word, char)
 
-        # check exact match
         if partial_word in matching_words:
             found_words.append(partial_word)
 
@@ -142,27 +143,27 @@ class Boggle:
 
         # add neighboring characters to the partial word
         if len(matching_words) > 0:
-            for x in self._get_neighbors(position.x):
-                for y in self._get_neighbors(position.y):
-                    next_position = self._Position(x, y)
+            for row in self._get_row_col_neighbors(position.row):
+                for col in self._get_row_col_neighbors(position.col):
+                    next_position = self._Position(col, row)
                     if next_position not in visited:
-                        found_words.extend(self._solve_puzzle(next_position, visited, partial_word, matching_words))
+                        found_words.extend(self._solve_position(next_position, visited, partial_word, matching_words))
 
         visited.remove(position)
 
         return found_words
 
-    def _get_neighbors(self, x_or_y_coord):
+    def _get_row_col_neighbors(self, row_col):
         """
-        Get neighbors around an x or y coordinate
-        :param x_or_y_coord: the x or y coordinate
-        :return: the x or y range of neighbors
+        Get neighbors around a row or column
+        :param row_col: row or column
+        :return: row or column and its neighbors
         """
-        # first x or y to consider
-        start = max(x_or_y_coord - 1, 0)
-        # last + 1 x or y to consider
-        stop = min(x_or_y_coord + 2, len(self.puzzle))
-        r = range(start, stop)
+        # inclusive start
+        start = max(row_col - 1, 0)
+        # exclusive limit
+        limit = min(row_col + 2, len(self.puzzle))
+        r = range(start, limit)
         return r
 
 
@@ -174,11 +175,11 @@ def read_puzzle():
     puzzle_size = int(sys.stdin.readline())
     puzzle = [None] * puzzle_size
     print('puzzle:')
-    for i in range(0, puzzle_size):
-        puzzle[i] = sys.stdin.readline().rstrip()
-        if len(puzzle[i]) != puzzle_size:
-            raise ValueError(f'{puzzle[i]} is the wrong length should be {puzzle_size}')
-        print(puzzle[i])
+    for row in range(0, puzzle_size):
+        puzzle[row] = sys.stdin.readline().rstrip()
+        if len(puzzle[row]) != puzzle_size:
+            raise ValueError(f'{puzzle[row]} is the wrong length should be {puzzle_size}')
+        print(puzzle[row])
     print()
     return puzzle
 
