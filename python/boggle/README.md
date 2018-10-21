@@ -23,4 +23,19 @@ gerbil <br />
 mouse <br />
 bee <br />
 
-The sample input will return dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2, mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.
+Sample output:<br />
+dog<br />
+deer<br />
+cat<br />
+bee<br />
+bird<br />
+bee<br />
+bee<br />
+mouse<br />
+mouse<br />
+gerbil<br />
+gerbil<br />
+bee<br />
+bee<br />
+
+The sample returns dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2, mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.

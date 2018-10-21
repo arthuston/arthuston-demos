@@ -1,30 +1,7 @@
 """
-Boggle puzzle game.
-Find words in a grid, according to the following rules: The letters must be adjoining in a 'chain'.
-Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used
-more than once in the chain.
+Boggle puzzle game. Find words in a grid, according to the following rules: The letters must be adjoining in a 'chain'. Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used more than once in the chain.
 
-This reads the puzzle and list of words from stdin. Example usage:
-cat input.txt | python boggle.py
-
-Sample input:
-5
-dogca
-ebirt
-rexdm
-gesuo
-erbil
-7
-dog
-cat
-deer
-bird
-gerbil
-mouse
-bee
-
-The sample input will return dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2,
-mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.
+This reads the puzzle and list of words from stdin. Example usage: cat input.txt | python boggle.py
 """
 
 import sys
