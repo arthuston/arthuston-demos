@@ -1,35 +1,13 @@
+/**
+ * Boggle puzzle game. Find words in a grid, according to the following rules: The letters must be adjoining in a
+ * 'chain'. Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used more than once in the chain.
+ *
+ * This reads the puzzle and list of words from stdin. Example usage: cat input.txt | python boggle.py
+ */
+
 package com.arthuston.demos.boggle;
 
 import org.apache.commons.lang3.Range;
-
-
-/**
- * Boggle puzzle game.
- * Find words in a grid, according to the following rules: The letters must be adjoining in a 'chain'.
- * Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used
- * more than once in the chain.
- * <p>
- * This reads the puzzle and list of words from stdin. Example usage:
- * cat input.txt | python boggle.py
- * <p>
- * Sample input:
- * 5
- * dogca
- * ebirt
- * rxxdm
- * gesuo
- * erbil
- * 6
- * dog
- * cat
- * deer
- * bird
- * gerbil
- * mouse
- * <p>
- * The sample input will find dog in the first line, cat in lines 1-2, bird in lines 2-3, mouse in lines 3-4, and gerbil
- * twice on lines 4-5. deer will not be found.
- */
 
 import javafx.util.Pair;
 
@@ -43,6 +21,7 @@ import static java.lang.Math.min;
 
 /**
  * Boggle puzzle game.
+ *
  */
 public class Boggle {
 

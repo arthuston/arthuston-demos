@@ -4,8 +4,7 @@ Find words in a grid, according to the following rules: The letters must be adjo
 Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used
 more than once in the chain.
 
-This reads the puzzle and list of words from stdin. Example usage:
-cat input.txt | python boggle.py
+This reads the puzzle and list of words from stdin.
 
 Sample input:
 5 <br />
@@ -22,5 +21,20 @@ bird <br />
 gerbil <br />
 mouse <br />
 
-The sample input will find dog in the first line, cat in lines 1-2, bird in lines 2-3, mouse in lines 3-4, and gerbil
-twice on lines 4-5. deer will not be found.
+Sample output:<br />
+dog<br />
+deer<br />
+cat<br />
+bee<br />
+bird<br />
+bee<br />
+bee<br />
+mouse<br />
+mouse<br />
+gerbil<br />
+gerbil<br />
+bee<br />
+bee<br />
+
+The sample output returns dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2, 
+mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.

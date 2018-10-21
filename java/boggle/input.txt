@@ -1,13 +1,14 @@
 5
 dogca
 ebirt
-rxxdm
+rexdm
 gesuo
 erbil
-6
+7
 dog
 cat
 deer
 bird
 gerbil
 mouse
+bee

@@ -3,10 +3,7 @@
  */
 package com.arthuston.demos.boggle;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
