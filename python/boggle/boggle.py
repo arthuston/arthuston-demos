@@ -11,19 +11,20 @@ Sample input:
 5
 dogca
 ebirt
-rxxdm
+rexdm
 gesuo
 erbil
-6
+7
 dog
 cat
 deer
 bird
 gerbil
 mouse
+bee
 
-The sample input will find dog in the first line, cat in lines 1-2, bird in lines 2-3, mouse in lines 3-4, and gerbil
-twice on lines 4-5. deer will not be found.
+The sample input will return dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2,
+mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.
 """
 
 import sys

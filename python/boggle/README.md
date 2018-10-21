@@ -7,20 +7,20 @@ more than once in the chain.
 This reads the puzzle and list of words from stdin. Example usage:
 cat input.txt | python boggle.py
 
-Sample input:
+Sample input:<br />
 5 <br />
 dogca <br />
 ebirt <br />
-rxxdm <br />
+rexdm <br />
 gesuo <br />
 erbil <br />
-6 <br />
+7 <br />
 dog <br />
 cat <br />
 deer <br />
 bird <br />
 gerbil <br />
 mouse <br />
+bee <br />
 
-The sample input will find dog in the first line, cat in lines 1-2, bird in lines 2-3, mouse in lines 3-4, and gerbil
-twice on lines 4-5. deer will not be found.
+The sample input will return dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2, mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.
