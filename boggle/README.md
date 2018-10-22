@@ -4,8 +4,6 @@ Find words in a grid, according to the following rules: The letters must be adjo
 Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used
 more than once in the chain.
 
-This reads the puzzle and list of words from stdin.
-
 Sample input:
 5 <br />
 dogca <br />
