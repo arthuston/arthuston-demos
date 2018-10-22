@@ -1,2 +1,2 @@
-# arthuston-demos/python
-Art Huston programming demos in python
+# arthuston-demos/java
+Art Huston programming demos in java
