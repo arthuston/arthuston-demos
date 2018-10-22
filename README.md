@@ -1,5 +1,5 @@
-# arthuston-demos
-I'm a Software Engineering Manager passionate about building, growing and motivating great teams. To be effective, a leader in software engineering needs to understand people, team dynamics and keep up to date on the technology. I have experience in Big Data/Machine Learning, Cloud Computing, and Internet of Things (IoT).
+# About Me
+I'm a Software Engineering Manager passionate about building, growing and motivating dynamic teams in Machine Learning, Cloud and IOT. My strong belief is that great engineering leaders understand people and are enthusiastic and knowledgeable about hands-on technology.
 
 For more on my background, see <a href="https://www.linkedin.com/arthuston">my LinkedIn page</a>.
 
