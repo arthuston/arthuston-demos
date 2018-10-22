@@ -1,5 +1,6 @@
 /**
  * Run boggle using standard input.
+ * @author art@arthuston.com
  */
 
 #include <istream>
