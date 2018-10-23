@@ -9,7 +9,7 @@
 void Boggle::solve(const std::set<std::string> &words, std::list<std::string> &foundWords) {
     foundWords.clear();
 
-    // look for complete word starting at each character
+    // look for complete words starting at each character
     for (int row = 0; row < puzzle.size(); row++) {
         for (int col = 0; col < puzzle.size(); col++) {
             // find words at current position
@@ -17,13 +17,14 @@ void Boggle::solve(const std::set<std::string> &words, std::list<std::string> &f
             std::set<Position> visited;
             std::string partialWord;
 
+            // solve recursively
             solvePosition(position, visited, partialWord, words, foundWords);
         }
     }
 }
 
-void Boggle::solvePosition(const std::pair<int, int> &position,
-                           std::set<std::pair<int, int>> &visited,
+void Boggle::solvePosition(const Position &position,
+                           std::set<Position> &visited,
                            const std::string &partialWord,
                            const std::set<std::string> &matchingWords,
                            std::list<std::string> &foundWords) {
@@ -45,15 +46,16 @@ void Boggle::solvePosition(const std::pair<int, int> &position,
 
     // add neighboring characters to the partial word
     if (newMatchingWords.size() > 0) {
-        std::pair<int, int> rowNeighbors;
+        IntRange rowNeighbors;
         getRowColNeighbors(position.first, rowNeighbors);
-        std::pair<int, int> colNeighbors;
+        IntRange colNeighbors;
         getRowColNeighbors(position.second, colNeighbors);
 
         for (int row = rowNeighbors.first; row <= rowNeighbors.second; row++) {
             for (int col = colNeighbors.first; col <= colNeighbors.second; col++) {
                 Position nextPosition(row, col);
                 if (visited.find(nextPosition) == visited.end()) {
+                    // solve recursively
                     solvePosition(nextPosition,
                                   visited, newPartialWord, newMatchingWords, foundWords);
                 }
@@ -68,16 +70,17 @@ void Boggle::findPartialMatches(const std::string &partialWord, const std::set<s
                                 std::set<std::string> &newMatchingWords) {
     newMatchingWords.clear();
     for (std::string matchingWord : matchingWords) {
+        // check if matchingWord starts with partialWord
         if (matchingWord.find(partialWord) == 0) {
             newMatchingWords.insert(matchingWord);
         }
     }
 }
 
-void Boggle::getRowColNeighbors(int rowCol, std::pair<int, int> &rowColNeighbors) {
-    // inclusive first row
+void Boggle::getRowColNeighbors(int rowCol, IntRange &rowColNeighbors) {
+    // inclusive first
     rowColNeighbors.first = std::max(rowCol - 1, 0);
-    // inclusive last column
+    // inclusive last
     rowColNeighbors.second = std::min(rowCol + 1, static_cast<int>(puzzle.size() - 1));
 }
 

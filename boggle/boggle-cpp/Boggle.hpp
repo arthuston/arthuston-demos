@@ -41,6 +41,7 @@ public:
 private:
 
     typedef std::pair<int, int> Position;
+    typedef std::pair<int, int> IntRange;
 
     /**
      * Solve puzzle recursively at current position.
@@ -71,7 +72,7 @@ private:
      * @param rowCol row or column
      * @rowColNeighbors row or column neighbors and rowCol
      */
-     void getRowColNeighbors(int rowCol, std::pair<int, int>& rowColNeighbors);
+     void getRowColNeighbors(int rowCol, IntRange& rowColNeighbors);
 
 
     /**
