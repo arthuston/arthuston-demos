@@ -1,10 +1,15 @@
 # /usr/bin/env python3
 
+"""
+Least recently used cache.
+"""
+
 
 class LinkedNode:
     """
     Linked list node.
     """
+
     def __init__(self, prev, nxt, key=None):
         self.prev = prev
         self.nxt = nxt
@@ -18,6 +23,7 @@ class LinkedList:
     """
     LinkedList with ability to push, pop, and pro
     """
+
     def __init__(self):
         self.front = LinkedNode(None, None)
         self.back = LinkedNode(self.front, None)
@@ -54,7 +60,11 @@ class LinkedList:
         s += ']'
         return s
 
+
 class LRUCache:
+    """
+    Least recently used cache.
+    """
 
     cache = {}
     used = LinkedList()
@@ -109,7 +119,7 @@ if __name__ == '__main__':
 
     print("updating values")
     for i in range(5, len(test_data)):
-        cache.put(i, test_data[i]  + 1)
+        cache.put(i, test_data[i] + 1)
         print('put %d %d %s' % (i, test_data[i] + 1, str(cache)))
 
     print("getting values")
