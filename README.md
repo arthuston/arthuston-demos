@@ -17,3 +17,5 @@ Find words in a grid, according to the following rules: The letters must be adjo
 # sampling
 <a href="sampling">sampling</a> - Extract a list of k items from a fixed list or finite stream.
 
+# lru_cache
+<a href="lru_cache">lru_cache</a> - Least recently used cache.
