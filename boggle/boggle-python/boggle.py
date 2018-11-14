@@ -1,5 +1,7 @@
 """
-Boggle puzzle game. Find words in a grid, according to the following rules: The letters must be adjoining in a 'chain'. Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used more than once in the chain.
+Boggle puzzle game. Find words in a grid, according to the following rules: The letters must be adjoining in a 'chain'.
+Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used more
+than once in the chain.
 
 This reads the puzzle and list of words from stdin. Example usage: cat input.txt | python boggle.py
 """
@@ -15,7 +17,7 @@ class Boggle:
 
     class _Position:
         """
-        Internal class to store the x-y position in the puzzle grtid.
+        Internal class to store the x-y position in the puzzle grid.
         """
         col = None
         row = None
@@ -30,7 +32,7 @@ class Boggle:
             self.col = col
             self.row = row
 
-        def __key(self):
+        def __key__(self):
             """
             Return key to this object.
             :return: key to this object
@@ -43,14 +45,22 @@ class Boggle:
             :param other: other position
             :return: true if the other position has the same coordinates as this position
             """
-            return self.__key() == other.__key()
+            return self.__key__() == other.__key__()
+
+        def __ne__(self, other):
+            """
+            Test for inequality.
+            :param other: other position
+            :return: true if the other position has different coordinates as this position
+            """
+            return not self.__eq__(other)
 
         def __hash__(self):
             """
             Return hash of this object.
             :return: hash of this object
             """
-            return hash(self.__key())
+            return hash(self.__key__())
 
     def __init__(self, puzzle):
         """
@@ -68,7 +78,7 @@ class Boggle:
     def solve(self, words):
         """
         Solve the puzzle.
-        :param words: list of words to lo ok for in the puzzle
+        :param words: list of words to look for in the puzzle
         :return: list of words actually found in the puzzle
         """
         found_words = []
@@ -79,29 +89,29 @@ class Boggle:
                 found_words.extend(self._solve_position(position=self._Position(x, y),
                                                         visited=set(),
                                                         partial_word="",
-                                                        matching_words=words))
+                                                        words=words))
         return found_words
 
-    def _check_partial_word(self, partial_word, matching_words):
+    def _get_partial_words(self, partial_word, words):
         """
         Check partial word matches.
         :param partial_word: partial word
-        :param matching_words: list of words that match so far
+        :param words: list of words that match so far
         :return: list of words where the first len(word) characters match
         """
         result = set()
-        for w in matching_words:
-            if partial_word == w[0:len(partial_word)]:
-                result.add(w)
+        for word in words:
+            if partial_word == word[0:len(partial_word)]:
+                result.add(word)
         return result
 
-    def _solve_position(self, position, visited, partial_word, matching_words):
+    def _solve_position(self, position, visited, partial_word, words):
         """
         Solve puzzle recursively at current position.
         :param position: current position
         :param visited: previously visited positions
         :param partial_word: the partial word
-        :param matching_words: list of words that match so far
+        :param words: list of words that match so far
         :return: list of found words
         """
         # set list of found words to empty
@@ -112,20 +122,20 @@ class Boggle:
         char = self.puzzle[position.row][position.col]
         partial_word = '%s%s' % (partial_word, char)
 
-        if partial_word in matching_words:
+        if partial_word in words:
             found_words.append(partial_word)
 
         # check partial matches
-        matching_words = self._check_partial_word(partial_word=partial_word,
-                                                  matching_words=matching_words)
+        words = self._get_partial_words(partial_word=partial_word,
+                                       words=words)
 
         # add neighboring characters to the partial word
-        if len(matching_words) > 0:
+        if len(words) > 0:
             for row in self._get_row_col_neighbors(position.row):
                 for col in self._get_row_col_neighbors(position.col):
                     next_position = self._Position(col, row)
                     if next_position not in visited:
-                        found_words.extend(self._solve_position(next_position, visited, partial_word, matching_words))
+                        found_words.extend(self._solve_position(next_position, visited, partial_word, words))
 
         visited.remove(position)
 
