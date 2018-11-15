@@ -5,9 +5,8 @@
 
 package com.arthuston.demos.boggle;
 
-import org.apache.commons.lang3.Range;
-
 import javafx.util.Pair;
+import org.apache.commons.lang3.Range;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -19,7 +18,6 @@ import static java.lang.Math.min;
 
 /**
  * Boggle puzzle game.
- *
  */
 public class Boggle {
 
@@ -74,13 +72,13 @@ public class Boggle {
      * @param position      current position
      * @param visited       previously visited positions
      * @param partialWord   the partial word
-     * @param matchingWords list of words that match so far
+     * @param words list of words that match so far
      * @return list of found words
      */
     private List<String> solvePosition(Pair<Integer, Integer> position,
                                        Set<Pair<Integer, Integer>> visited,
                                        String partialWord,
-                                       Set<String> matchingWords) {
+                                       Set<String> words) {
         // list of found words is empty,
         // set this position to visited,
         // and add character to partial word
@@ -89,16 +87,18 @@ public class Boggle {
         char ch = puzzleChar(position);
         String newPartialWord = new StringBuilder(partialWord).append(ch).toString();
 
-        // check exact match
-        if (matchingWords.contains(newPartialWord)) {
+        // check partial words
+        words = getPartialWords(newPartialWord, words);
+        if (words.contains(newPartialWord)) {
+            // check exact match
             foundWords.add(newPartialWord);
+            words.remove(newPartialWord);
         }
 
-        // check partial words
-        matchingWords = findPartialMatches(newPartialWord, matchingWords);
 
-        // add neighboring characters to the partial word
-        if (matchingWords.size() > 0) {
+        if (words.size() > 0) {
+
+            // search neighboring characters
             Range<Integer> rowNeighbors = getRowColNeighbors(row(position));
             Range<Integer> collNeighbors = getRowColNeighbors(col(position));
             for (int row = rowNeighbors.getMinimum(); row <= rowNeighbors.getMaximum(); row++) {
@@ -106,7 +106,7 @@ public class Boggle {
                     Pair nextPosition = position(row, col);
                     if (!visited.contains(nextPosition)) {
                         List<String> newFoundWords = solvePosition(nextPosition,
-                                visited, newPartialWord, matchingWords);
+                                visited, newPartialWord, words);
                         foundWords.addAll(newFoundWords);
                     }
                 }
@@ -124,7 +124,7 @@ public class Boggle {
      * @param matchingWords list of words that match so far
      * @return set of words where the first len(word) characters match
      */
-    private Set<String> findPartialMatches(String partialWord, Set<String> matchingWords) {
+    private Set<String> getPartialWords(String partialWord, Set<String> matchingWords) {
         Set<String> newMatchingWords = new HashSet<String>();
         for (String matchingWord : matchingWords) {
             if (matchingWord.startsWith(partialWord)) {

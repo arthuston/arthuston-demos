@@ -122,12 +122,13 @@ class Boggle:
         char = self.puzzle[position.row][position.col]
         partial_word = '%s%s' % (partial_word, char)
 
-        if partial_word in words:
-            found_words.append(partial_word)
-
         # check partial matches
         words = self._get_partial_words(partial_word=partial_word,
                                        words=words)
+        if partial_word in words:
+            # exact match
+            found_words.append(partial_word)
+            words.remove(partial_word)
 
         # add neighboring characters to the partial word
         if len(words) > 0:

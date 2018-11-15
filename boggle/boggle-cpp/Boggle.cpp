@@ -35,14 +35,15 @@ void Boggle::solvePosition(const Position &position,
     std::string newPartialWord = std::string(partialWord);
     newPartialWord.push_back(ch);
 
-    // check exact match
-    if (matchingWords.find(newPartialWord) != matchingWords.end()) {
-        foundWords.push_back(newPartialWord);
-    }
-
     // check partial words
     std::set<std::string> newMatchingWords;
     findPartialMatches(newPartialWord, matchingWords, newMatchingWords);
+
+    if (newMatchingWords.find(newPartialWord) != newMatchingWords.end()) {
+        // check exact match
+        foundWords.push_back(newPartialWord);
+        newMatchingWords.erase(newPartialWord);
+    }
 
     // add neighboring characters to the partial word
     if (newMatchingWords.size() > 0) {

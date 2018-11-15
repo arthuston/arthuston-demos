@@ -4,35 +4,38 @@ Find words in a grid, according to the following rules: The letters must be adjo
 Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used
 more than once in the chain.
 
-Sample input:
-5 <br />
-dogca <br />
-ebirt <br />
-rxxdm <br />
-gesuo <br />
-erbil <br />
-6 <br />
-dog <br />
-cat <br />
-deer <br />
-bird <br />
-gerbil <br />
-mouse <br />
-
+Sample input:<br />
+```
+5
+dogca 
+ebirt 
+rxxdm 
+gesuo 
+erbil 
+6 
+dog 
+cat 
+deer 
+bird 
+gerbil 
+mouse 
+```
 Sample output:<br />
-dog<br />
-deer<br />
-cat<br />
-bee<br />
-bird<br />
-bee<br />
-bee<br />
-mouse<br />
-mouse<br />
-gerbil<br />
-gerbil<br />
-bee<br />
-bee<br />
+```
+dog
+deer
+cat
+bee
+bird
+bee
+bee
+mouse
+mouse
+gerbil
+gerbil
+bee
+bee
+```
 
 The sample output returns dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2, 
 mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.

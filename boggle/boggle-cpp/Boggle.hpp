@@ -4,8 +4,8 @@
  * @author art@arthuston.com
  */
 
-#ifndef BOGGLE_BOGGLE_HPP
-#define BOGGLE_BOGGLE_HPP
+#ifndef BOGGLE_HPP
+#define BOGGLE_HPP
 
 
 #include <vector>
@@ -32,6 +32,7 @@ public:
 
     /**
      * Solve the puzzle.
+     * Returns result by reference instead of stack for performance.
      *
      * @param words std::set of words to look for in the puzzle
      * @param foundWords the std::set of found words actually in the puzzle
@@ -45,6 +46,7 @@ private:
 
     /**
      * Solve puzzle recursively at current position.
+     * Returns result by reference instead of stack for performance.
      *
      * @param position      current position
      * @param visited       previously visited positions
@@ -57,22 +59,26 @@ private:
                        const std::string &partialWord,
                        const std::set<std::string> &matchingWords,
                        std::list<std::string> &foundWords);
+
     /**
      * Find partial word matches.
+     * Returns result by reference instead of stack for performance.
      *
      * @param partialWord   partial word
      * @param matchingWords list of words that match so far
      * @param newMatchingWords std::set of words where the first len(word) characters match
      */
-     void findPartialMatches(const std::string& partialWord, const std::set<std::string>& matchingWords,
-             std::set<std::string>& newMatchingWords);
+    void findPartialMatches(const std::string &partialWord, const std::set<std::string> &matchingWords,
+                            std::set<std::string> &newMatchingWords);
+
     /**
      * Get neighbors and self of a row or column
+     * Returns result by reference instead of stack for performance.
      *
      * @param rowCol row or column
      * @rowColNeighbors row or column neighbors and rowCol
      */
-     void getRowColNeighbors(int rowCol, IntRange& rowColNeighbors);
+    void getRowColNeighbors(int rowCol, IntRange &rowColNeighbors);
 
 
     /**
@@ -80,7 +86,7 @@ private:
      * @param position the position
      * @return character at position.
      */
-    char puzzleChar(const Position&  position);
+    char puzzleChar(const Position &position);
 
     std::vector<std::string> puzzle;
 
