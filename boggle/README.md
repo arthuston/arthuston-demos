@@ -7,18 +7,19 @@ more than once in the chain.
 Sample input:<br />
 ```
 5
-dogca 
-ebirt 
-rxxdm 
-gesuo 
-erbil 
-6 
-dog 
-cat 
-deer 
-bird 
-gerbil 
-mouse 
+dogca
+ebirt
+rexdm
+gesuo
+erbil
+7
+dog
+cat
+deer
+bird
+gerbil
+mouse
+bee
 ```
 Sample output:<br />
 ```
