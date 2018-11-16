@@ -49,16 +49,14 @@ private:
      * Returns result by reference instead of stack for performance.
      *
      * @param position      current position
-     * @param visited       previously visited positions
      * @param partialWord   the partial word
      * @param matchingWords std::set of words that match so far
+     * @param visited       previously visited positions
      * @param foundWords    the list of found words actually in the puzzle
      */
-    void solvePosition(const Position &position,
-                       std::set<Position> &visited,
-                       const std::string &partialWord,
-                       const std::set<std::string> &matchingWords,
-                       std::list<std::string> &foundWords);
+    void
+    solvePosition(const Position &position, const std::string &partialWord, const std::set<std::string> &matchingWords,
+                  std::set<Position> &visited, std::list<std::string> &foundWords);
 
     /**
      * Find partial word matches.

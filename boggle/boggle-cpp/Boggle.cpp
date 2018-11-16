@@ -18,16 +18,13 @@ void Boggle::solve(const std::set<std::string> &words, std::list<std::string> &f
             std::string partialWord;
 
             // solve recursively
-            solvePosition(position, visited, partialWord, words, foundWords);
+            solvePosition(position, partialWord, words, visited, foundWords);
         }
     }
 }
 
-void Boggle::solvePosition(const Position &position,
-                           std::set<Position> &visited,
-                           const std::string &partialWord,
-                           const std::set<std::string> &matchingWords,
-                           std::list<std::string> &foundWords) {
+void Boggle::solvePosition(const Position &position, const std::string &partialWord, const std::set<std::string> &matchingWords,
+                           std::set<Position> &visited, std::list<std::string> &foundWords) {
     // add this position to visited,
     // and add character to partial word
     visited.insert(position);
@@ -57,8 +54,8 @@ void Boggle::solvePosition(const Position &position,
                 Position nextPosition(row, col);
                 if (visited.find(nextPosition) == visited.end()) {
                     // solve recursively
-                    solvePosition(nextPosition,
-                                  visited, newPartialWord, newMatchingWords, foundWords);
+                    solvePosition(nextPosition, newPartialWord, newMatchingWords,
+                                  visited, foundWords);
                 }
             }
         }
