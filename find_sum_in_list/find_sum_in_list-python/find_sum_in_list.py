@@ -6,6 +6,7 @@ Example:
     Given input [1, 2, 3[ and 77, return None
 """
 
+
 def find_sum_in_list(lst, sm):
     """
     Find first consecutive values in a list that total to a sum.
