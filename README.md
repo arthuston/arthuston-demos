@@ -3,7 +3,7 @@ I'm a Software Engineering Manager/Architect skilled at building, growing and mo
 
 ## Coding Examples
 
-Coding examples in Python, Java and C++.
+Coding examples in <a href="#Python">Python</a>, <a href="#Java">Java</a> and <a href="#C++">C++</a>.
 
 * <a href="boggle">boggle</a> - Boggle puzzle game (<a href="boggle/boggle-python">Python</a>, <a href="boggle/boggle-java">Java<a>, <a href="boggle/boggle-cpp">C++</a>).
 * <a href="infix_calculator">infix_calculator</a> - Simple infix calculator (<a href="infix_calculator/infix_calculator-python">Python</a>).
