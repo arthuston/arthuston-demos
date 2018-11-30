@@ -3,11 +3,11 @@ I'm a Software Engineering Manager/Architect skilled at building, growing and mo
 
 ## Coding Examples
 
-Coding examples in <a href="#Python">Python</a>, <a href="#Java">Java</a> and <a href="#C++">C++</a>.
+Coding examples in <a href="#Python">Python</a>, <a href="#Java">Java</a>, <a href="#C++">C++</a> and <a href="#Scala">Scala</a>.
 
 * <a href="boggle">boggle</a> - Boggle puzzle game (<a href="boggle/boggle-python">Python</a>, <a href="boggle/boggle-java">Java<a>, <a href="boggle/boggle-cpp">C++</a>).
 * <a href="infix_calculator">infix_calculator</a> - Simple infix calculator (<a href="infix_calculator/infix_calculator-python">Python</a>).
-* <a href="find_sum_in_list">find_sum_in_list</a> - Find first consecutive values in a list that total to a specified sum (<a href="find_sum_in_list/find_sum_in_list-python">Python</a>, <a href="find_sum_in_list/find_sum_in_list-java">Java</a>).
+* <a href="find_sum_in_list">find_sum_in_list</a> - Find first consecutive values in a list that total to a specified sum (<a href="find_sum_in_list/find_sum_in_list-python">Python</a>, <a href="find_sum_in_list/find_sum_in_list-java">Java</a>, <a href="find_sum_in_list/find_sum_in_list-scala">Scala</a>).
 * <a href="sampling">sampling</a> - Extract a list of k items from a fixed list or finite stream (<a href="sampling/sampling-python">Python</a>).
 * <a href="lru_cache">lru_cache</a> - Least recently used cache (<a href="lru_cache/lru_cache-python">Python</a>).
 * <a href="one_edit_apart">one_edit_apart</a> - Determine if two strings are exactly one edit apart by adding removing or replacing a character (<a href="one_edit_apart/one_edit_apart-python">Python</a>).
@@ -25,3 +25,7 @@ Coding examples in <a href="#Python">Python</a>, <a href="#Java">Java</a> and <a
 ### C++
 
 <a href="boggle/boggle-cpp">boggle</a>
+
+### Scala
+
+<a href="find_sum_in_list/find_sum_in_list-scala">find_sum_in_list</a>
