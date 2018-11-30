@@ -14,13 +14,28 @@ object Main extends App {
     * @param args not used
     */
   override def main(args: Array[String]): Unit = {
-    demo(Array(), 0)
+    // isEmpty
+    demo(Array(), 5)
     demo(Array(1), 5)
+    
+    // EmptyRange
+    demo(Array(), 0)
+    
+    // Option(0 to 0)
     demo(Array(5), 5)
+    demo(Array(5, 5), 5)
+    
+    // Option(0 to 1)
+    demo(Array(2, 3), 5)
+    demo(Array(2, 3, 5), 5)
+    
+    // Option(1 to 1)
     demo(Array(1, 5), 5)
+    demo(Array(1, 5, 5), 5)
+    
+    // Option(1 to 2)
     demo(Array(1, 2, 3), 5)
     demo(Array(1, 2, 3, 5), 5)
-    demo(Array(1, 2, 4, 5), 5)
   }
 
   /**

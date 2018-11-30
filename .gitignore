@@ -4,3 +4,5 @@ venv
 out
 cmake-build-debug
 CMakeLists.txt
+project
+target
