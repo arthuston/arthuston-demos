@@ -1,9 +1,12 @@
 """
 Find first consecutive values in a list that total to a specified sum.
 Example:
-    Given input [1, 2, 3] and 5, return [2, 3]
-    Given input [1, 2, 3] and 6, return [1, 2, 3]
-    Given input [1, 2, 3[ and 77, return None
+    Given input [1, 2, 3, 4] and 1, return [1]
+    Given input [1, 2, 3, 4] and 3, return [1, 2]
+    Given input [1, 2, 3, 4] and 5, return [2, 3]
+    Given input [1, 2, 3, 4] and 7, return [3, 4]
+    Given input [1, 2, 3, 4] and 4, return [4]
+    Given input [1, 2, 3, 4] and 11, return None
 """
 
 
