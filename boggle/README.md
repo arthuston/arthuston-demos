@@ -1,4 +1,3 @@
-# boggle
 Boggle puzzle game.
 Find words in a grid, according to the following rules: The letters must be adjoining in a 'chain'.
 Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used
@@ -40,3 +39,8 @@ bee
 
 The sample output returns dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2, 
 mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.
+
+[cpp](boggle-cpp)<br/>
+[python](boggle-python)<br/>
+[java](boggle-java)
+
