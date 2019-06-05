@@ -13,6 +13,9 @@ Example:
 def find_sum_in_list(lst, sm):
     """
     Find first consecutive values in a list that total to a sum.
+    Algorithm: use a totals dictionary to store running total and running position as key-value pairs.
+    If the difference of a calculated running total and the desired sum is already in totals,
+    then return the sub-list starting at the stored running position and ending at the current position.
     :param lst: the list to examine
     :param sm: the sum to match
     :return: the range that totals to the sum, or None if not found
