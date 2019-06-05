@@ -40,3 +40,7 @@ bee
 
 The sample output returns dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2, 
 mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.
+
+[Python](boggle-python)
+[C++](boggle-cpp)
+
