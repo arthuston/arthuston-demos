@@ -1,1 +1,1 @@
-Boggle game for C++.
+Least recently used cache for C++.
