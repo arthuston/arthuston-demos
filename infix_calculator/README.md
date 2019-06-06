@@ -1,4 +1,4 @@
-# infix 
+# infix_calculator
 Simple infix calculator.
 
 Convert an infix string arithmetic expression and calculate the value
