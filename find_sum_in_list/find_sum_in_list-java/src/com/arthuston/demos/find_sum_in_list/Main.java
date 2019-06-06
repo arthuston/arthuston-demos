@@ -2,6 +2,8 @@
  * Find sums utility main program.
  */
 
+package com.arthuston.demos.find_sum_in_list;
+
 import org.apache.commons.lang3.Range;
 
 import java.util.Arrays;
