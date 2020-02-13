@@ -6,7 +6,10 @@ than once in the chain.
 This reads the puzzle and list of words from stdin. Example usage: cat input.txt | python boggle.py
 """
 
+from __future__ import annotations
+
 import sys
+from typing import List, Set, Tuple
 
 
 class Boggle:
@@ -19,10 +22,10 @@ class Boggle:
         """
         Internal class to store the x-y position in the puzzle grid.
         """
-        col = None
-        row = None
+        col: int = None
+        row: int = None
 
-        def __init__(self, col, row):
+        def __init__(self, col: int, row: int):
             """
             Constructor.
             :param row: row in the puzzle
@@ -32,14 +35,14 @@ class Boggle:
             self.col = col
             self.row = row
 
-        def __key__(self):
+        def __key__(self) -> Tuple[int, int]:
             """
             Return key to this object.
             :return: key to this object
             """
             return self.col, self.row
 
-        def __eq__(self, other):
+        def __eq__(self, other: Boggle._Position) -> bool:
             """
             Test for equality.
             :param other: other position
@@ -47,7 +50,7 @@ class Boggle:
             """
             return self.__key__() == other.__key__()
 
-        def __ne__(self, other):
+        def __ne__(self, other: Boggle._Position) -> bool:
             """
             Test for inequality.
             :param other: other position
@@ -55,14 +58,14 @@ class Boggle:
             """
             return not self.__eq__(other)
 
-        def __hash__(self):
+        def __hash__(self) -> int:
             """
             Return hash of this object.
             :return: hash of this object
             """
             return hash(self.__key__())
 
-    def __init__(self, puzzle):
+    def __init__(self, puzzle: List[List[str]]):
         """
         Boggle constructor.
         :param puzzle: list of same-length strings representing the grid.
@@ -75,7 +78,7 @@ class Boggle:
                 raise ValueError('Illegal puzzle len %d instead of %d at line %d' %
                                  (len(s), puzzle_len, i))
 
-    def solve(self, words):
+    def solve(self, words: List[str]) -> List[str]:
         """
         Solve the puzzle.
         :param words: list of words to look for in the puzzle
@@ -92,7 +95,7 @@ class Boggle:
                                                         words=words))
         return found_words
 
-    def _get_partial_words(self, partial_word, words):
+    def _get_partial_words(self, partial_word: str, words: List[str]) -> Set[str]:
         """
         Check partial word matches.
         :param partial_word: partial word
@@ -105,7 +108,8 @@ class Boggle:
                 result.add(word)
         return result
 
-    def _solve_position(self, position, visited, partial_word, words):
+    def _solve_position(self, position: _Position, visited: Set[_Position],
+                        partial_word: str, words: List[str]) -> List[str]:
         """
         Solve puzzle recursively at current position.
         :param position: current position
@@ -142,7 +146,7 @@ class Boggle:
 
         return found_words
 
-    def _get_row_col_neighbors(self, row_col):
+    def _get_row_col_neighbors(self, row_col: int) -> range:
         """
         Get neighbors around a row or column
         :param row_col: row or column
@@ -156,7 +160,7 @@ class Boggle:
         return r
 
 
-def read_puzzle():
+def read_puzzle() -> List[List[str]]:
     """
     Read puzzle from stdin.
     :return: puzzle
@@ -173,7 +177,7 @@ def read_puzzle():
     return puzzle
 
 
-def read_words():
+def read_words() -> List[str]:
     """
     Read list of words from stdin.
     :return: list of words
