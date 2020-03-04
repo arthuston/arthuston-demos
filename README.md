@@ -1,5 +1,5 @@
 # About Me
-I'm a Software Engineering Manager skilled at building, growing and motivating dynamic teams and hands-on implementation, with proven experience in Machine Learning, Cloud, IoT and Security. For more on my background, see <a href="https://www.linkedin.com/in/arthuston">my LinkedIn page</a>.
+I'm an Experienced, Proven Software Engineer skilled at designing and implementing machine learning and other applications, and in leading teams. For more on my background, see <a href="https://www.linkedin.com/in/arthuston">my LinkedIn page</a>.
 
 ## Coding Examples
 
