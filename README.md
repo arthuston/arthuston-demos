@@ -5,7 +5,7 @@ I'm an Experienced, Proven Software Engineer skilled at designing and implementi
 
 Coding examples in C++, Java, Python and Scala.
 
-* [boggle](boggle) - Boggle puzzle game [C++](boggle/boggle-cpp) [Java](boggle/boggle-java) [Python](boggle/boggle-python)
+* [boggle](boggle) - Boggle puzzle game [C++](boggle/boggle-cpp) [Java](boggle/boggle-java) [Python](boggle/boggle-python) [Scala](boggle/boggle-scala)
 * [combine_ranges](combine_ranges) - Combine overlapping ranges in a list of ranges [Python](combine_ranges/combine_ranges-python)
 * [infix_calculator](infix_calculator) - Simple infix calculator [Python](infix_calculator/infix_calculator-python)
 * [find_sum_in_list](find_sum_in_list) - Find first consecutive values in a list that total to a specified sum [Java](find_sum_in_list/find_sum_in_list-java) [Python](find_sum_in_list/find_sum_in_list-java) [Scala](find_sum_in_list/find_sum_in_list-scala)
@@ -28,4 +28,5 @@ Coding examples in C++, Java, Python and Scala.
 
 ### Scala
 
+[boggle](boggle/boggle-scala)
 [find_sum_in_list](find_sum_in_list/find_sum_in_list-scala)

@@ -45,3 +45,4 @@ mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (tw
 [C++](boggle-cpp)<br/>
 [Python](boggle-python)<br/>
 [Java](boggle-java)
+[Scala](boggle-scala)
