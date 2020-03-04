@@ -160,9 +160,9 @@ class Boggle:
         return r
 
 
-def read_puzzle() -> List[List[str]]:
+def read_puzzle() -> List[str]:
     """
-    Read puzzle from stdin.
+    Read puzzle from standard in.
     :return: puzzle
     """
     puzzle_size = int(sys.stdin.readline())
