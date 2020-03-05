@@ -1,0 +1,14 @@
+5
+dogca
+ebirt
+rexdm
+gesuo
+erbil
+7
+dog
+cat
+deer
+bird
+gerbil
+mouse
+bee
