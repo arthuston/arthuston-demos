@@ -1,11 +1,13 @@
 # boggle
 
 Boggle puzzle game.
-Find words in a grid, according to the following rules: The letters must be adjoining in a 'chain'.
-Letters in the chain may be adjacent horizontally, vertically, or diagonally. The letter position cannot be used
-more than once in the chain.
+Given an X by Y grid of letters and a list of words, find all the words in the grid,
+according to the following rules: The letters must be adjacent to each in a 'chain'
+and may be adjacent horizontally, vertically, or diagonally. The letter position
+cannot be used more than once in a single chain. The input is a new-line delimited file
+contining the number of rows in the grid, the characters in each row, the number of
+words to look for and the list of words, for example:
 
-Sample input:<br />
 ```
 5
 dogca
@@ -22,7 +24,36 @@ gerbil
 mouse
 bee
 ```
-Sample output:<br />
+
+The program should find ```dog```, ```deer```, ```cat```, ```bee``` and ```bird``` as follows:
+
+```
+dog
+```
+
+```
+d
+e
+re
+```
+
+```
+  ca
+   t
+```
+
+```
+eb
+ e
+```
+
+```
+ bir
+   d
+```
+
+The complete list of words should be:
+
 ```
 dog
 deer
@@ -38,9 +69,6 @@ gerbil
 bee
 bee
 ```
-
-The sample output returns dog, deer and cat starting at line 1, bee (three times) and bird starting at line 2,
-mouse (twice) starting at line 3, gerbil (twice) starting at line 4, and bee (twice) starting at line 5.
 
 [C++](boggle-cpp)<br/>
 [Python](boggle-python)<br/>
