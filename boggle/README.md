@@ -6,7 +6,7 @@ according to the following rules: The letters in each word must be adjacent to e
 in a 'chain' of letters and may be adjacent horizontally, vertically, or diagonally.
 The letter position cannot be used more than once in a single word chain. The input is a
 new-line delimited file containing the number of rows in the grid, the characters in each row,
-the number ofwords to look for and the list of words, for example:
+the number of words to look for and the list of words, for example:
 
 ```
 5
