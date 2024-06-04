@@ -5,7 +5,7 @@ Given an X by Y grid of letters and a list of words, find all the words in the g
 according to the following rules: The letters in each word must be adjacent to each other
 in a 'chain' of letters and may be adjacent horizontally, vertically, or diagonally.
 The letter position cannot be used more than once in a single word chain. The input is a
-new-line delimited file contianing the number of rows in the grid, the characters in each row,
+new-line delimited file containing the number of rows in the grid, the characters in each row,
 the number ofwords to look for and the list of words, for example:
 
 ```
