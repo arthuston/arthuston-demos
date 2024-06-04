@@ -1,7 +1,3 @@
 # boggle-java
 
-Boggle game for java.
-
-[boggle](..)
-
-
+[Boggle game](..) in java.
