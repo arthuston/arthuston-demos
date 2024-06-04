@@ -1,5 +1,3 @@
 # boggle-python
 
-Boggle game for python.
-
-[boggle](..)
+[Boggle game](..) in python.
