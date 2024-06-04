@@ -1,5 +1,3 @@
 # boggle-cpp
 
-Boggle game for C++.
-
-[boggle](..)
+[Boggle game](..) written in C++.
