@@ -2,11 +2,11 @@
 
 Boggle puzzle game.
 Given an X by Y grid of letters and a list of words, find all the words in the grid,
-according to the following rules: The letters must be adjacent to each in a 'chain'
-and may be adjacent horizontally, vertically, or diagonally. The letter position
-cannot be used more than once in a single chain. The input is a new-line delimited file
-contining the number of rows in the grid, the characters in each row, the number of
-words to look for and the list of words, for example:
+according to the following rules: The letters in each word must be adjacent to each other
+in a 'chain' of letters and may be adjacent horizontally, vertically, or diagonally.
+The letter position cannot be used more than once in a single word chain. The input is a
+new-line delimited file contianing the number of rows in the grid, the characters in each row,
+the number ofwords to look for and the list of words, for example:
 
 ```
 5
